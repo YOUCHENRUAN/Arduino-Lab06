@@ -1,0 +1,164 @@
+char a = 0;
+void setup() {
+    Serial.begin(9600);
+}
+ 
+void loop() {
+    // 檢查是否有資料可供讀取
+    if (Serial.available() > 0) {
+        a = Serial.read();
+        Serial.println(a);
+        GetChar(a);
+        delay(800);
+    }
+}
+ 
+void x() {
+    tone(8, 440, 150); // 短音
+    delay(500); 
+}
+ 
+// DASH
+void y() {
+    tone(8, 440, 700); 
+    delay(800); 
+}
+ 
+void GetChar(char tmpChar) {
+    switch (tmpChar) {
+        case 'a':
+            x();
+            y();
+            break;
+        case 'b':
+            y();
+            x();
+            x();
+            x();
+            break;
+        case 'c':
+            y();
+            x();
+            y();
+            x();
+            break;
+        case 'd':
+            y();
+            y();
+            x();
+            break;
+        case 'e':
+            x();
+            break;
+        case 'f':
+            x();
+            x();
+            y();
+            x();
+            break;
+        case 'g':
+            y();
+            y();
+            x();
+            break;
+        case 'h':
+            x();
+            x();
+            x();
+            x();
+            break;
+        case 'i':
+            x();
+            x();
+            break;
+        case 'j':
+            x();
+            y();
+            y();
+            y();
+            break;
+        case 'k':
+            y();
+            x();
+            y();
+            break;
+        case 'l':
+            x();
+            y();
+            x();
+            x();
+            break;
+        case 'm':
+            y();
+            y();
+            break;
+        case 'n':
+            y();
+            x();
+            break;
+        case 'o':
+            y();
+            y();
+            y();
+            break;
+        case 'p':
+            x();
+            y();
+            y();
+            x();
+            break;
+        case 'q':
+            y();
+            y();
+            x();
+            y();
+            break;
+        case 'r':
+            x();
+            y();
+            x();
+            break;
+        case 's':
+            x();
+            x();
+            x();
+            break;
+        case 't':
+            y();
+            break;
+        case 'u':
+            x();
+            x();
+            y();
+            break;
+        case 'v':
+            x();
+            x();
+            x();
+            y();
+            break;
+        case 'w':
+            x();
+            y();
+            y();
+            break;
+        case 'x':
+            y();
+            x();
+            x();
+            y();
+            break;
+        case 'y':
+            y();
+            x();
+            y();
+            y();
+            break;
+        case 'z':
+            y();
+            y();
+            x();
+            x();
+            break;
+    }
+}
